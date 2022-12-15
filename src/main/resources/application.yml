@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/turf-management
+    username: postgres
+    password: postgres
+  profiles:
+    active: prod
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update

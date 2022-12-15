@@ -1,0 +1,206 @@
+#User sign up request
+user_sign_up_request:
+  username:
+    not_blank:
+      code: VAL.SUR0101
+      message: Username must not be blank
+  password:
+    not_blank:
+      code: VAL.SUR0201
+      message: Password must not be blank
+    pattern:
+      code: VAL.SUR0202
+      message: Password has at least 8 characters, containing at least 1 uppercase letter, 1 lowercase letter, 1 numeric character.
+  password_confirmation:
+    not_blank:
+      code: VAL.SUR0301
+      message: Password confirmation must not be blank
+  role:
+    not_blank:
+      code: VAL.SUR0401
+      message: Role must not be blank
+    pattern:
+      code: VAL.SUR0402
+      message: Role must match ROLE_USER|ROLE_ADMIN
+  full_name:
+    not_blank:
+      code: VAL.SUR0501
+      message: Full name must not be blank
+  phone_number:
+    not_blank:
+      code: VAL.SUR0601
+      message: Phone number must not be blank
+#Login request
+login_request:
+  username:
+    not_blank:
+      code: VAL.LOR0101
+      message: Username must not be blank
+  password:
+    not_blank:
+      code: VAL.LOR0102
+      message: Password must not be blank
+#Refresh token request
+refresh_token_request:
+  refresh_token:
+    not_blank:
+      code: VAL.RTR0101
+      message: Refresh token type must not be blank
+#Change password request
+change_password_request:
+  old_password:
+    not_blank:
+      code: VAL.PAS0101
+      message: Old password must not be blank
+    pattern:
+      code: VAL.PAS0102
+      message: Old password has at least 8 characters, containing at least 1 uppercase letter, 1 lowercase letter, 1 numeric character.
+  new_password:
+    not_blank:
+      code: VAL.PAS0201
+      message: New password must not be blank
+    pattern:
+      code: VAL.PAS0202
+      message: New password has at least 8 characters, containing at least 1 uppercase letter, 1 lowercase letter, 1 numeric character.
+  confirm_new_password:
+    not_blank:
+      code: VAL.PAS0301
+      message: Confirm new password must not be blank
+    pattern:
+      code: VAL.PAS0302
+      message: Confirm new password has at least 8 characters, containing at least 1 uppercase letter, 1 lowercase letter, 1 numeric character.
+#Schedule request
+schedule_request:
+  turf_id:
+    not_null:
+      code: VAL.SCR0101
+      message: Turf id must not be null
+  title:
+    not_blank:
+      code: VAL.SCR0201
+      message: Title must not be blank
+    size:
+      code: VAL.SCR0202
+      message: Title size must be between 1 and 200
+  description:
+    not_blank:
+      code: VAL.SCR0301
+      message: Description must not be blank
+    size:
+      code: VAL.SCR0302
+      message: Description size must be between 1 and 200
+  start_time:
+    not_null:
+      code: VAL.SCR0401
+      message: Start time must not be null
+  end_time:
+    not_null:
+      code: VAL.SCR0501
+      message: End time must not be null
+#Schedule update request
+schedule_update_request:
+  title:
+    not_blank:
+      code: VAL.SCR0201
+      message: Title must not be blank
+    size:
+      code: VAL.SCR0202
+      message: Title size must be between 1 and 200
+  description:
+    not_blank:
+      code: VAL.SCR0301
+      message: Description must not be blank
+    size:
+      code: VAL.SCR0302
+      message: Description size must be between 1 and 200
+  start_time:
+    not_null:
+      code: VAL.SCR0401
+      message: Start time must not be null
+  end_time:
+    not_null:
+      code: VAL.SCR0501
+      message: End time must not be null
+#Location turf request
+location_turf_request:
+  name:
+    not_blank:
+      code: VAL.LTR0101
+      message: Name must not be blank
+    size:
+      code: VAL.LTR0102
+      message: Name size must be between 1 and 200
+  address:
+    not_blank:
+      code: VAL.LTR0201
+      message: Address must not be blank
+    size:
+      code: VAL.LTR0202
+      message: Address size must be between 1 and 200
+  image_link:
+    not_blank:
+      code: VAL.LTR0301
+      message: Image link must not be blank
+#Turf request
+turf_request:
+  name:
+    not_blank:
+      code: VAL.TUR0101
+      message: Name must not be blank
+    size:
+      code: VAL.TUR0102
+      message: Name size must be between 1 and 200
+  location_turf_id:
+    not_null:
+      code: VAL.TUR0201
+      message: Location turf id must not be null
+  price:
+    not_null:
+      code: VAL.TUR0301
+      message: Turf hourlyFee must not be null
+  type:
+    not_blank:
+      code: VAL.TUR0401
+      message: Type must not be blank
+    pattern:
+      code: VAL.TUR0402
+      message: Type must match FIVE_SIDE|SEVEN_SIDE
+  image_link:
+    not_blank:
+      code: VAL.TUR0501
+      message: Image link must not be blank
+#Turf request
+turf_update_request:
+  name:
+    not_blank:
+      code: VAL.TUR0101
+      message: Name must not be blank
+    size:
+      code: VAL.TUR0102
+      message: Name size must be between 1 and 200
+  price:
+    not_null:
+      code: VAL.TUR0301
+      message: Turf price must not be null
+  type:
+    not_blank:
+      code: VAL.TUR0401
+      message: Type must not be blank
+    pattern:
+      code: VAL.TUR0402
+      message: Type must match FIVE_SIDE|SEVEN_SIDE
+  image_link:
+    not_blank:
+      code: VAL.TUR0501
+      message: Image link must not be blank
+#BaseReasonRequest
+base_reason_request:
+  reason_cancel:
+    not_blank:
+      code: VAL.BRS0101
+      message: Reason cancel must not be blank
+    max:
+      code: VAL.BRS0102
+      message: Reason cancel size must be between 1 and 500
+
+

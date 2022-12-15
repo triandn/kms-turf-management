@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  kms-docker-container:
+    image: huynhngocthuat/kms-docker:v1.0.0
+    container_name: kms-docker-container
+    ports:
+      - 8085:8080
+    volumes:
+      - ./:/app
