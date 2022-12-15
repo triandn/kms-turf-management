@@ -1,18 +1,15 @@
 pipeline {
-    agent any
-    stages {
-        stage ('Initialize') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                '''
-            }
+	agent none
+  stages {
+  	stage('Maven Install') {
+    	agent {
+      	docker {
+        	image 'maven:3.5.0'
         }
-        stage ('Build') {
-            steps {
-                sh 'mvn -Dmaven.test.failure.ignore=true install'
-            }
-        }
+      }
+      steps {
+      	sh 'mvn clean install'
+      }
     }
+  }
 }
